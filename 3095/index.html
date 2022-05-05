@@ -109,6 +109,9 @@
     };
 
     const postVote = async (e) => {
+      if (!e.target.elements.lang.value) {
+        return e.preventDefault();
+      }
       try {
         const postData = {
           code: e.target.elements.lang.value,
